@@ -3,6 +3,7 @@
 #include "sortings.cpp"
 
 
+
 // TODO Интерфейс пользователя должен быть на русском языке
 int main() {
     // TODO Пользователь вводит размер массив и элементы массива
@@ -11,7 +12,7 @@ int main() {
 	if (n <= 0){
 		return 0;
 	}
-	int rar[n];
+	int *rar = new int[n];
 	for (int i = 0; i < n; i++){
 		std::cin >> rar[i];
 	}
@@ -22,6 +23,7 @@ int main() {
 	biv::my_sort(rar, n);
 	// TODO Выводится первоначальный массив и отсортированный
 	biv::print_array("массив отсорт:", rar, n);
+	delete[] rar;
 	return 0;
 }
 
